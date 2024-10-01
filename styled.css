@@ -1,0 +1,187 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* White background for contrast */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+}
+
+.navbar .logo img {
+    height: 50px; /* Increased logo height */
+}
+
+.logout-btn {
+    padding: 10px 15px;
+    background-color: #ff6347; /* Logout button color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #feb47b; /* Lighter color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Container styling */
+.container {
+    margin-top: 80px; /* Margin to avoid navbar overlap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transaction container styling */
+.transaction-container {
+    background: linear-gradient(145deg, #ffffff, #f2f2f2);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    text-align: center;
+}
+
+/* Styling for headings */
+.transaction-container h2 {
+    color: #ff6347; /* Heading color */
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Styling for input boxes */
+.input-box {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Styling for input fields */
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff6347; /* Border color */
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 16px; /* Increased font size for better readability */
+    background: transparent; /* Transparent background */
+    color: #333; /* Text color */
+}
+
+/* Label styling */
+.input-box label {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #aaa; /* Default label color */
+    transition: 0.2s ease all;
+    font-size: 16px; /* Default font size */
+}
+
+/* Focus and valid state for inputs */
+.input-box input:focus {
+    border-color: #feb47b; /* Focus border color */
+    box-shadow: 0 0 5px rgba(255, 126, 95, 0.5); /* Subtle glow effect */
+}
+
+/* Move label when input is focused or has value */
+.input-box input:focus + label,
+.input-box input:valid + label {
+    top: -10px; /* Move label up */
+    left: 10px; /* Adjust left */
+    font-size: 12px; /* Smaller font size */
+    color: #ff6347; /* Active label color */
+}
+
+/* Color display box */
+.color-display {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #ff6347; /* Border color */
+    margin-left: 10px; /* Spacing */
+}
+
+/* Selected colors section */
+.selected-colors {
+    margin-top: 20px; /* Space above */
+    text-align: left; /* Left align the text */
+}
+
+/* List of selected colors */
+#colorList {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px; /* Space above the color list */
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between items */
+    margin-bottom: 10px; /* Space below items */
+}
+
+.color-item span {
+    width: 20px; /* Width of color square */
+    height: 20px; /* Height of color square */
+    border-radius: 3px;
+    margin-right: 5px; /* Space between color square and text */
+}
+
+/* Button styling */
+button {
+    background-color: #ff6347; /* Button color */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px; /* Increased font size */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #feb47b; /* Lighter color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Add color button styling */
+button[type="button"] {
+    background-color: #4CAF50; /* Green color for add color button */
+    margin-top: 10px;
+}
+
+button[type="button"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .transaction-container {
+        width: 90%; /* Full width on smaller screens */
+        padding: 20px; /* Adjust padding */
+    }
+}

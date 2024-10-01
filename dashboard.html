@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styled.css"> 
+    <script src="scriptd.js" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="company-logo.png" alt="Company Logo">
+        </div>
+        <div class="logout">
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="transaction-container">
+            <h2>Transaction Details</h2>
+            <form id="transactionForm" onsubmit="return handleSubmit();">
+                <div class="input-box">
+                    <input type="text" id="transactionId" required>
+                    <label for="transactionId">Transaction ID</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="ifsc" required>
+                    <label for="ifsc">IFSC Code</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="bankName" required>
+                    <label for="bankName">Bank Name</label>
+                </div>
+                <div class="input-box">
+                    <label for="color">Select Print Color:</label>
+                    <div id="colorPickers">
+                        <input type="color" id="color1" name="color[]" value="#000000" onchange="updateColorDisplay(this.value)">
+                       
+                    </div>
+                   
+                    <button type="button" onclick="addColorPicker()">Add Color</button>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylet.css"> <!-- Link to CSS -->
+    <title>Transaction Details</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Company Logo"> <!-- Replace with your logo -->
+            </div>
+            <div class="logout">
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </div>
+        
+        
+        <div class="transaction-container">
+            <h2>Transaction Details</h2>
+            <div id="transactionDetails"></div>
+            <button onclick="printDetails()">Print Details</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript -->
+    <script>
+        // Sample transaction data (replace with dynamic data)
+        const transaction = {
+            transactionId: "TRX12345",
+            ifscCode: "IFSC0001234",
+            bankName: "Sample Bank",
+            amount: "1000.00",
+            date: "2024-10-01"
+        };
+
+        // Function to display transaction details
+        function displayTransactionDetails() {
+            const transactionDetails = document.getElementById("transactionDetails");
+            transactionDetails.innerHTML = `
+                <p style="color: ${getRandomColor()}">Transaction ID: ${transaction.transactionId}</p>
+                <p style="color: ${getRandomColor()}">IFSC Code: ${transaction.ifscCode}</p>
+                <p style="color: ${getRandomColor()}">Bank Name: ${transaction.bankName}</p>
+                <p style="color: ${getRandomColor()}">Amount: ₹${transaction.amount}</p>
+                <p style="color: ${getRandomColor()}">Date: ${transaction.date}</p>
+            `;
+        }
+
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Function to print the details (or you can implement a print preview)
+        function printDetails() {
+            window.print();
+        }
+
+        // Logout function to redirect to the login page
+        function logout() {
+            window.location.href = 'index.html'; // Redirect to login page
+        }
+
+        // Display the transaction details on page load
+        window.onload = displayTransactionDetails;
+    </script>
+</body>
+</html>
