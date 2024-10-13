@@ -15,8 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     // Check if username and password match the default user
     if (username === defaultUser.username && password === defaultUser.password) {
         alert('Login successful!');
-        window.location.href = 'dashboard.html'; // Redirect to dashboard page
-    } else {
+        window.location.href = 'index.html';
         errorMessage.textContent = 'Invalid username or password!';
     }
 });
